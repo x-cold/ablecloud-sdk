@@ -1,22 +1,26 @@
 {
-  "name": "ac-node-sdk",
-  "version": "1.0.0",
+  "name": "ablecloud-sdk",
+  "version": "1.0.1",
   "description": "NodeJS SDK for AbleCloud Web App",
-  "main": "ac-node-sdk.js",
+  "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "qiniu": "^7.1.3"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:AbleCloudGit/ac-node-sdk.git"
+    "url": "git@github.com:x-cold/ablecloud-sdk.git"
   },
   "keywords": [
     "ac-node-sdk"
   ],
-  "author": "AbleCloud",
+  "author": "x-cold<lxstart@outlook.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbleCloudGit/ac-node-sdk/issues"
+    "url": "https://github.com/x-cold/ablecloud-sdk/issues"
   },
-  "homepage": "https://github.com/AbleCloudGit/ac-node-sdk#readme"
+  "homepage": "https://github.com/x-cold/ablecloud-sdk#readme"
 }

@@ -3,11 +3,21 @@
  
 ## how to use
 
- - npm install ac-node-sdk
- - var ac = require('ac-node-sdk') 
+### install package
+
+```
+npm install -S ablecloud-sdk
+```
+
+### import package
+
+```js
+var ac = require('ablecloud-sdk');
+```
  
 ### init with configurations achived from AbleCloud
- ```
+
+```js
  /*
  * 初始化ac
  *
@@ -19,9 +29,11 @@
  *
  */
 ac.init('developerId', 'majorDomain', 'ak', 'sk', 'router');
+
  ```
  ### start a request to UDS or Matrix
- ```
+
+```js
  /*
  * 发送请求(开发者签名)
  *
@@ -49,7 +61,8 @@ ac.sendToServiceWithoutSign('serviceName', 1, 'method', { key1: value2, key2: va
     .catch(error => console.log(error));
 ```
  ### start a http request
- ```
+
+```js
  /*
  * 发送外网请求
  *
@@ -67,5 +80,3 @@ ac.createHttpRequest({
 }).then(resp => console.log(resp.data))
 .catch(error => console.log(error));
 ```
-
-

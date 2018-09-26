@@ -5,6 +5,7 @@ var ac = require('./dist/ac-node-sdk.js')
  *
  * @param developerId       开发者id
  * @param majorDomain       主域
+ * @param subDomain         子域，可为空值
  * @param ak                开发者秘钥
  * @param sk                开发者秘钥
  * @param router            请求地址如: test.ablecloud.cn:5000
