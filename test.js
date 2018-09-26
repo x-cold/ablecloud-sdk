@@ -11,7 +11,7 @@ var ac = require('./dist/ac-node-sdk.js')
  * @param router            请求地址如: test.ablecloud.cn:5000
  *
  */
-ac.init('developerId', 'majorDomain', 'ak', 'sk', 'router');
+ac.init('developerId', 'majorDomain', 'subDomain', 'ak', 'sk', 'router');
 /*
  * 发送请求(开发者签名)
  *

@@ -1,6 +1,6 @@
 let ac = require('./index.js')
 
-ac.init('developerId', 'majorDomain', '', 'ak', 'sk', 'router');
+ac.init('developerId', 'majorDomain', 'subDoamin', 'ak', 'sk', 'router');
 
 ac.getDownloadUrl('test', '1.png')
 	.then(resp => console.log(resp))
