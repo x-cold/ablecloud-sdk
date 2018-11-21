@@ -1,17 +1,16 @@
-var ac = require('./dist/ac-node-sdk.js')
+'use strict';
 
-/*
- * 初始化ac
- *
- * @param developerId       开发者id
- * @param majorDomain       主域
- * @param subDomain         子域，可为空值
- * @param ak                开发者秘钥
- * @param sk                开发者秘钥
- * @param router            请求地址如: test.ablecloud.cn:5000
- *
- */
-ac.init('developerId', 'majorDomain', 'subDomain', 'ak', 'sk', 'router');
+const AbleCloud = require('.');
+
+const ac = new AbleCloud({
+  developerId: 'developerId',
+  majorDomain: 'majorDomain',
+  subDomain: 'subDomain',
+  ak: 'ak',
+  sk: 'sk',
+  router: 'router',
+});
+
 /*
  * 发送请求(开发者签名)
  *
@@ -22,8 +21,8 @@ ac.init('developerId', 'majorDomain', 'subDomain', 'ak', 'sk', 'router');
  *
  */
 ac.sendToService('serviceName', 1, 'method', { key1: value2, key2: value2 })
-    .then(resp => console.log(resp))
-    .catch(error => console.log(error));
+  .then(resp => console.log(resp))
+  .catch(error => console.log(error));
 
 /*
  * 发送匿名请求
@@ -33,10 +32,10 @@ ac.sendToService('serviceName', 1, 'method', { key1: value2, key2: value2 })
  * @param method            方法名称
  * @param body              Object 类型如: { key1: value2, key2: value2 }
  *
- */ 
+ */
 ac.sendToServiceWithoutSign('serviceName', 1, 'method', { key1: value2, key2: value2 })
-    .then(resp => console.log(resp))
-    .catch(error => console.log(error));    
+  .then(resp => console.log(resp))
+  .catch(error => console.log(error));
 
 /*
  * 发送外网请求
@@ -50,7 +49,7 @@ ac.sendToServiceWithoutSign('serviceName', 1, 'method', { key1: value2, key2: va
  *              }).then(resp => {}).catch(err => {})
  */
 ac.createHttpRequest({
-    method: 'get',
-    url: 'https://www.baidu.com/'
+  method: 'get',
+  url: 'https://www.baidu.com/'
 }).then(resp => console.log(resp.data))
-.catch(error => console.log(error));
+  .catch(error => console.log(error));
