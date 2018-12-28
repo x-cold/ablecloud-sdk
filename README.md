@@ -1,6 +1,7 @@
-# ac-node-sdk
- NodeJS SDK for AbleCloud Web App
- 
+# ablecloud-sdk
+
+NodeJS SDK for AbleCloud Web App
+
 ## how to use
 
 ### install package
@@ -14,7 +15,7 @@ npm install -S ablecloud-sdk
 ```js
 const AbleCloud = require('ablecloud-sdk');
 ```
- 
+
 ### init with configurations achived from AbleCloud
 
 ```js
@@ -26,8 +27,9 @@ const ac = new AbleCloud({
   sk: 'sk',
   router: 'router',
 });
- ```
- ### start a request to UDS or Matrix
+```
+
+### start a request to UDS or Matrix
 
 ```js
  /*
@@ -56,7 +58,8 @@ ac.sendToServiceWithoutSign('serviceName', 1, 'method', { key1: value2, key2: va
     .then(resp => console.log(resp))
     .catch(error => console.log(error));
 ```
- ### start a http request
+
+### start a http request
 
 ```js
  /*
@@ -73,6 +76,7 @@ ac.sendToServiceWithoutSign('serviceName', 1, 'method', { key1: value2, key2: va
 ac.createHttpRequest({
     method: 'get',
     url: 'https://www.baidu.com/'
-}).then(resp => console.log(resp.data))
-.catch(error => console.log(error));
+})
+    .then(resp => console.log(resp.data))
+    .catch(error => console.log(error));
 ```
