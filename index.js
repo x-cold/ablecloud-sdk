@@ -75,8 +75,8 @@ class AbleCloud {
         isPublicWriteAllow: true,
       },
     };
-    const { config } = this;
-    return ACClient.request(BLOBSTORE_SERVICE_NAME, BLOBSTORE_SERVICE_VERSION, UPLOADFILE_NAME, request, false, config)
+    const { config, client } = this;
+    return client.request(BLOBSTORE_SERVICE_NAME, BLOBSTORE_SERVICE_VERSION, UPLOADFILE_NAME, request, false, config)
       .then(resp => {
         // const storeType = resp.storeType;
         const upToken = resp.uptoken;
@@ -100,8 +100,6 @@ class AbleCloud {
                   return reject(error);
                 });
             }
-            console.log(respInfo.statusCode);
-            console.log(respBody);
             reject(respBody);
           });
         });
@@ -119,8 +117,8 @@ class AbleCloud {
    * @return {Function} promise
    */
   getDownloadUrl(bucket, name) {
-    const { config } = this;
-    return ACClient.request(BLOBSTORE_SERVICE_NAME, BLOBSTORE_SERVICE_VERSION, DOWNLOAD_URL_NAME, { bucket, name }, false, config)
+    const { config, client } = this;
+    return client.request(BLOBSTORE_SERVICE_NAME, BLOBSTORE_SERVICE_VERSION, DOWNLOAD_URL_NAME, { bucket, name }, false, config)
       .then(resp => {
         return Promise.resolve(resp.downloadUrl);
       }).catch(error => {
