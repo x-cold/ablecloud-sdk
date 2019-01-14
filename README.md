@@ -1,3 +1,5 @@
+deprecated, please use ac-node-sdk.
+
 # ablecloud-sdk
 
 NodeJS SDK for AbleCloud Web App
